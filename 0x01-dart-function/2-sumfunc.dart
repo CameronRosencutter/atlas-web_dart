@@ -6,14 +6,15 @@ int sub(int a, int b) {
   return a - b;
 }
 
-String showFunc(int a, int b) {
+void showFunc(int a, int b) {
   int sum = add(a, b);
   int difference = sub(a, b);
-  return 'Sum: $sum, Difference: $difference';
+  print('Add $a + $b = $sum');
+  print('Sub $a - $b = $difference');
 }
 
-void main() {
-  int a = 10;
-  int b = 5;
-  print(showFunc(a, b)); // Example usage
+void main(List<String> args) {
+  int a = int.parse(args[0]);
+  int b = int.parse(args[1]);
+  showFunc(a, b);
 }
