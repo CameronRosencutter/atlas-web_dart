@@ -13,7 +13,7 @@ String showFunc(int a, int b) {
 }
 
 void main() {
-  int a = 50;
+  int a = 10;
   int b = 5;
   print(showFunc(a, b)); // Example usage
 }
