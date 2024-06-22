@@ -6,7 +6,7 @@ class User extends Password {
   String name;
   int age;
   double height;
-  String user_password;
+  String _user_password;
 
   User({
     required this.id,
@@ -14,7 +14,7 @@ class User extends Password {
     required this.age,
     required this.height,
     required String user_password,
-  })  : user_password = user_password,
+  })  : _user_password = user_password,
         super(password: user_password);
 
   Map<String, dynamic> toJson() {
@@ -40,6 +40,13 @@ class User extends Password {
   String toString() {
     return 'User(id : $id ,name: $name, age: $age, height: $height, Password: ${isValid()})';
   }
+
+  String get user_password => _user_password;
+
+  set user_password(String password) {
+    _user_password = password;
+    super.password = password;
+  }
 }
 
 void main() {
@@ -53,7 +60,7 @@ void main() {
   print('<===========Json=========>:');
   print('\n');
   print(djo.toJson());
-  
+
   Map<String, dynamic> map = {
     'id': 3,
     'name': 'Youssef',
@@ -71,9 +78,7 @@ void main() {
   print('<===========Test2===========>:');
   print('\n');
   djo.user_password = "holberton98";
-  djo.password = "holberton98";
   youssef.user_password = "AZERfghn6789";
-  youssef.password = "AZERfghn6789";
   print(djo.toString());
   print(youssef.toString());
 }
