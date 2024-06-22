@@ -1,12 +1,16 @@
-// ignore: unused_import
-import '1-util.dart';
+// ignore_for_file: unused_import
+
 import 'dart:convert';
+import '1-util.dart';
 
 Future<String> getUserId() async {
-  String user = await fetchUserData();
-  Map userMap = jsonDecode(user);
-  String userId = userMap["id"];
-  return userId;
+  try {
+    Map<String, dynamic> userData = jsonDecode(await fetchUserData());
+    String userID = userData['id'];
+    return userID;
+  } catch (e) {
+    return 'Error fetching user ID: $e';
+  }
 }
 
 fetchUserData() {
