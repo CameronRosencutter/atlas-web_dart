@@ -31,10 +31,10 @@ class User {
 }
 
 void main() {
-  final djo = User(id: 1, name: "Djo", age: 25, height: 1.89);
+  final djo = User(id : 1, name: "Djo", age: 25, height: 1.89);
   print(djo.toJson());
   
-  Map<String, dynamic> map = {'id': 3, 'name': 'Youssef', 'age': 26, 'height': 1.9};
+  Map<String, dynamic> map = {'id' : 3, 'name': 'Youssef', 'age': 26, 'height': 1.9};
   final youssef = User.fromJson(map);
   
   print(djo.toString());
